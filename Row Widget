@@ -1,0 +1,61 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(new MaterialApp(
+    home: new MYNA(),
+  ));
+}
+
+class MYNA extends StatefulWidget {
+  const MYNA({super.key});
+
+  @override
+  State<MYNA> createState() => _MYNAState();
+}
+
+class _MYNAState extends State<MYNA> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'ROW',
+          style: TextStyle(),
+        ),
+        backgroundColor: Colors.lightBlueAccent,
+      ),
+      body: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.baseline,
+          textBaseline: TextBaseline.alphabetic,
+          children: <Widget>[
+            Text(
+              'GOBIKA',
+              style: TextStyle(fontSize: 30),
+            ),
+            Text(
+              'GOBIKA',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            Container(
+              color: Colors.purple,
+              height: 50,
+              width: 50,
+            ),
+            Container(
+              color: Colors.blue,
+              height: 50,
+              width: 50,
+            ),
+            Container(
+              color: Colors.green,
+              height: 50,
+              width: 50,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
