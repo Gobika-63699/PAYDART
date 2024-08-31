@@ -1,0 +1,52 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(new MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: new MYNA(),
+  ));
+}
+
+class MYNA extends StatefulWidget {
+  const MYNA({super.key});
+
+  @override
+  State<MYNA> createState() => _MYNAState();
+}
+
+class _MYNAState extends State<MYNA> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('COLUMN WIDGET'),
+        backgroundColor: Colors.blue,
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.add_a_photo),
+          ),
+          Container(
+            color: Colors.purple,
+            height: 100,
+            width: 100,
+          ),
+          Container(
+            color: Colors.greenAccent,
+            height: 100,
+            width: 100,
+          ),
+          Container(
+            color: Colors.lightBlueAccent,
+            height: 100,
+            width: 100,
+          )
+        ],
+      ),
+    );
+  }
+}
