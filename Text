@@ -1,0 +1,43 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(new MaterialApp(
+    home: new MYNA(),
+  ));
+}
+
+class MYNA extends StatefulWidget {
+  const MYNA({super.key});
+
+  @override
+  State<MYNA> createState() => _MYNAState();
+}
+
+class _MYNAState extends State<MYNA> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+      title: Center(
+          child: Text('HOSTEL MANAGEMENT SYSTEM',
+              style: TextStyle(
+                fontSize: 25.0,
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.italic,
+                letterSpacing: 0,
+                wordSpacing: 2.0,
+                backgroundColor: Colors.green,
+                shadows: [
+                  Shadow(
+                      color: Colors.purple,
+                      offset: Offset(1, 1),
+                      blurRadius: 2),
+                ],
+                decoration: TextDecoration.underline,
+                decorationColor: Colors.black,
+                decorationStyle: TextDecorationStyle.solid,
+              ))),
+    ));
+  }
+}
