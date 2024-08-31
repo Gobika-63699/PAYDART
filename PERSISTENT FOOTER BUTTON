@@ -1,0 +1,156 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(new MaterialApp(
+    home: new MyApp(),
+  ));
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          /*leading: IconButton(
+                onPressed: () {
+                  print('GOBIKASHIVAN');
+                },
+                icon: Icon(Icons.menu)),*/
+          title: Text('MyApp'),
+          actions: <Widget>[
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.search),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.more_vert),
+            )
+          ],
+          bottom: PreferredSize(
+            preferredSize: Size.fromHeight(70.0),
+            child: Container(
+              color: Colors.purple,
+              height: 70.0,
+              width: double.infinity,
+              child: Text(
+                'GOBIKASHIVAN',
+                style: TextStyle(color: Colors.white, fontSize: 30.0),
+              ),
+            ),
+          ),
+        ),
+        body: Center(
+          child: Text(
+            'GOBIKASHIVAN',
+            style: TextStyle(fontSize: 30.0, color: Colors.lightBlueAccent),
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
+            elevation: 100.0,
+            child: Icon(Icons.home),
+            onPressed: () {
+              print('CLICK');
+            }),
+        floatingActionButtonLocation:
+            FloatingActionButtonLocation.miniCenterFloat,
+        drawer: Drawer(
+          elevation: 10.0,
+          child: Column(
+            children: [
+              UserAccountsDrawerHeader(
+                accountName: Text('GOBIKASHIVAN'),
+                accountEmail: Text('gobikashivan@gmail.com'),
+                currentAccountPicture: CircleAvatar(
+                  child: Text(
+                    'GS',
+                    style: TextStyle(
+                      color: Colors.lightBlueAccent,
+                      fontSize: 40.0,
+                    ),
+                  ),
+                  backgroundColor: Colors.white,
+                ),
+              ),
+              ListTile(
+                title: Text('HOME'),
+                leading: Icon(Icons.home),
+              ),
+              Divider(
+                height: 0.1,
+              ),
+              ListTile(
+                title: Text('SETTINGS'),
+                leading: Icon(Icons.settings),
+              ),
+              Divider(
+                height: 0.1,
+              ),
+              ListTile(
+                title: Text('SEARCH'),
+                leading: Icon(Icons.search),
+              ),
+              Divider(
+                height: 0.1,
+              ),
+              ListTile(
+                title: Text('MESSAGE'),
+                leading: Icon(Icons.message),
+              ),
+              Divider(
+                height: 0.1,
+              ),
+              ListTile(
+                title: Text('HELP'),
+                leading: Icon(Icons.help),
+              ),
+              Divider(
+                height: 0.1,
+              ),
+              ListTile(
+                title: Text('ABOUT US'),
+                leading: Icon(Icons.privacy_tip),
+              ),
+              Divider(
+                height: 0.1,
+              ),
+            ],
+          ),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: 2,
+          items: [
+            BottomNavigationBarItem(label: 'HOME', icon: Icon(Icons.home)),
+            BottomNavigationBarItem(label: 'SEARCH', icon: Icon(Icons.search)),
+            BottomNavigationBarItem(
+                label: 'CATEGORY', icon: Icon(Icons.category)),
+          ],
+          onTap: (int index) {
+            print(index.toString());
+          },
+        ),
+        persistentFooterButtons: <Widget>[
+          ElevatedButton(
+              onPressed: () {
+                print('RAGAVA');
+              },
+              child: Icon(Icons.add)),
+          ElevatedButton(
+              onPressed: () {
+                print('KAVIN');
+              },
+              child: Icon(Icons.remove))
+        ],
+      ),
+    );
+  }
+}
