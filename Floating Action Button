@@ -1,0 +1,77 @@
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(new MaterialApp(
+    home: new MyApp(),
+  ));
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          appBar: AppBar(
+            leading: IconButton(
+                onPressed: () {
+                  print('GOBIKASHIVAN');
+                },
+                icon: Icon(Icons.menu)),
+            title: Text('MyApp'),
+            actions: <Widget>[
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.search),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.more_vert),
+              )
+            ],
+            flexibleSpace: SafeArea(
+              child: Icon(
+                Icons.camera,
+                color: Colors.blue,
+                size: 40.0,
+              ),
+            ),
+            bottom: PreferredSize(
+              preferredSize: Size.fromHeight(70.0),
+              child: Container(
+                color: Colors.purple,
+                height: 70.0,
+                width: double.infinity,
+                child: Text(
+                  'GOBIKASHIVAN',
+                  style: TextStyle(color: Colors.white, fontSize: 30.0),
+                ),
+              ),
+            ),
+          ),
+          body: Center(
+            child: Text(
+              'GOBIKASHIVAN',
+              style: TextStyle(fontSize: 30.0, color: Colors.lightBlueAccent),
+            ),
+          ),
+          floatingActionButton: FloatingActionButton(
+              elevation: 10.0,
+              child: Icon(Icons.home),
+              onPressed: () {
+                print('CLICK');
+              }),
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerFloat,
+        ));
+  }
+}
+
